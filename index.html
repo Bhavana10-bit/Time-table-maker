@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timetable Maker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📅 Timetable Maker</h1>
+            <p>Create your perfect timetable in minutes</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Configuration Section -->
+            <section class="config-section" id="configSection">
+                <h2>Step 1: Basic Configuration</h2>
+                <div class="form-group">
+                    <label for="days">Number of Days:</label>
+                    <input type="number" id="days" min="1" max="7" value="5" required>
+                </div>
+                <div class="form-group">
+                    <label for="periods">Number of Periods per Day:</label>
+                    <input type="number" id="periods" min="1" max="12" value="6" required>
+                </div>
+                <div class="form-group">
+                    <label for="dayNames">Day Names (comma-separated):</label>
+                    <input type="text" id="dayNames" value="Monday, Tuesday, Wednesday, Thursday, Friday" placeholder="Monday, Tuesday, Wednesday...">
+                </div>
+
+                <h2>Step 2: Add Subjects</h2>
+                <div class="subjects-container">
+                    <div class="input-group">
+                        <input type="text" id="subjectInput" placeholder="Enter subject name">
+                        <button type="button" id="addSubject">Add Subject</button>
+                    </div>
+                    <div id="subjectsList" class="items-list"></div>
+                </div>
+
+                <h2>Step 3: Add Optional Subjects (2 classes per week)</h2>
+                <div class="optional-subjects-container">
+                    <div class="input-group">
+                        <input type="text" id="optionalSubjectInput" placeholder="Enter optional subject name">
+                        <button type="button" id="addOptionalSubject">Add Optional Subject</button>
+                    </div>
+                    <div id="optionalSubjectsList" class="items-list"></div>
+                </div>
+
+                <h2>Step 4: Set Time Slots with Breaks</h2>
+                <div class="time-slots-container">
+                    <div class="input-group">
+                        <input type="time" id="startTime" value="08:45">
+                        <span>to</span>
+                        <input type="time" id="endTime" value="16:30">
+                        <button type="button" id="setTimeSlots">Set Time Slots</button>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="enableShortBreak" checked> Enable Short Break (after 2 classes)
+                        </label>
+                        <div class="break-inputs" id="shortBreakInputs">
+                            <input type="time" id="shortBreakStart" value="10:45">
+                            <span>to</span>
+                            <input type="time" id="shortBreakEnd" value="11:00">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="enableLunchBreak" checked> Enable Lunch Break (after 4 classes)
+                        </label>
+                        <div class="break-inputs" id="lunchBreakInputs">
+                            <input type="time" id="lunchBreakStart" value="13:00">
+                            <span>to</span>
+                            <input type="time" id="lunchBreakEnd" value="13:45">
+                        </div>
+                    </div>
+                    <div id="timeSlotsDisplay" class="time-slots-display"></div>
+                </div>
+
+                <div class="button-group">
+                    <button type="button" id="generateBtn" class="btn-primary">Generate Timetable</button>
+                    <button type="button" id="resetBtn" class="btn-secondary">Reset</button>
+                </div>
+            </section>
+
+            <!-- Timetable Display Section -->
+            <section class="timetable-section" id="timetableSection" style="display: none;">
+                <div class="timetable-header">
+                    <h2>Your Timetable</h2>
+                    <div class="timetable-actions">
+                        <button type="button" id="editBtn" class="btn-secondary">Edit</button>
+                        <button type="button" id="exportBtn" class="btn-primary">Export as PDF</button>
+                        <button type="button" id="printBtn" class="btn-primary">Print</button>
+                    </div>
+                </div>
+                <div id="timetableDisplay" class="timetable-display"></div>
+            </section>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
