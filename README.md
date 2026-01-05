@@ -1,12 +1,12 @@
 # 📅 Timetable Maker
 
-A beautiful, user-friendly web application for creating and managing timetables. Generate perfect schedules in minutes with customizable days, periods, subjects, and break times.
+A beautiful, user-friendly web application for creating and managing timetables. Generate perfect schedules in minutes with customizable days, periods, subjects.
 
 ## ✨ Features
 
 - **Flexible Configuration**
-  - Customize number of days (1-7)
-  - Set number of periods per day (1-12)
+  - Customize number of days (1-6)
+  - Set number of periods per day (1-8)
   - Custom day names (comma-separated)
 
 - **Subject Management**
@@ -16,9 +16,7 @@ A beautiful, user-friendly web application for creating and managing timetables.
 
 - **Time Slot Management**
   - Set custom start and end times
-  - Configure short break (after 2 classes)
-  - Configure lunch break (after 4 classes)
-  - Automatic time slot generation with break integration
+  - Automatic time slot generation integration
 
 - **Smart Timetable Generation**
   - Automatic subject distribution across the week
@@ -69,9 +67,7 @@ No prerequisites needed! This is a pure HTML/CSS/JavaScript application that run
 ### Step 4: Set Time Slots with Breaks
 1. Set your start time and end time
 2. Click "Set Time Slots" to generate time periods
-3. Enable/disable short break (after 2 classes) and set its time
-4. Enable/disable lunch break (after 4 classes) and set its time
-5. Review the generated time slots display
+3. Review the generated time slots display
 
 ### Step 5: Generate Timetable
 1. Click "Generate Timetable" button
@@ -105,10 +101,6 @@ time-table-maker/
 - Handles optional subjects separately (2 classes per week each)
 - Randomizes placement for variety
 
-### Break Integration
-- Automatically inserts breaks at specified periods
-- Visual distinction for break cells in the timetable
-- Customizable break times
 
 ### Responsive Design
 - Works seamlessly on desktop, tablet, and mobile devices
